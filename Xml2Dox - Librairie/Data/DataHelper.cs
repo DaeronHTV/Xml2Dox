@@ -1,4 +1,6 @@
-﻿namespace Xml2Dox.Librairie;
+﻿using System.Globalization;
+
+namespace Xml2Dox.Librairie;
 
 public class DataHelper
 {
@@ -6,12 +8,15 @@ public class DataHelper
     private static object locker = new object();
     private static DataHelper instance = null!;
     private About about;
+    public string lang;
     #endregion
 
     #region Class Management
     private DataHelper() 
     {
         InitAbout();
+        var cultureLang = CultureInfo.CurrentCulture.Name;
+        lang = cultureLang.Contains("FR") ? "FR" : "EN";
     }
 
     private void InitAbout()
@@ -52,4 +57,6 @@ public class DataHelper
     #endregion
 
     public About About { get => about; }
+
+    public string Lang { get => lang; }
 }

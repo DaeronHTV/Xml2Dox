@@ -18,8 +18,4 @@ internal enum Actions
     /// Version de l'application
     /// </summary>
     v = 3,
-    /// <summary>
-    /// 
-    /// </summary>
-    g = 4
 }

@@ -11,6 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Ihm", "Xml2Dox - IH
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0466947F-FABD-4A4E-902D-61497406B438}"
 	ProjectSection(SolutionItems) = preProject
+		CHANGELOG = CHANGELOG
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject

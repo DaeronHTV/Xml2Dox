@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Xml2Dox">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Commands">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Command">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Description" type="xs:string" />
+										<xs:element name="Exemple" type="xs:string" />
+										<xs:element minOccurs="0" name="Parameters">
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element maxOccurs="unbounded" name="Parameter">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="Name" type="xs:string" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="Options">
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element maxOccurs="unbounded" name="Option">
+														<xs:complexType mixed="true">
+															<xs:sequence minOccurs="0">
+																<xs:element name="Exemple" type="xs:string" />
+															</xs:sequence>
+															<xs:attribute name="Name" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
