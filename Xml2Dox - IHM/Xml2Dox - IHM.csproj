@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Xml2Dox-Ihm\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>

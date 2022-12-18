@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Xml2Dox": {
+      "commandName": "Project",
+      "commandLineArgs": "/xsl"
+    }
+  }
+}

@@ -3,7 +3,7 @@
 namespace Xml2Dox
 {
     internal class Program
-    {
+    { 
         static void Main(string[] args)
         {
             if (args.Length == 0)
@@ -12,7 +12,7 @@ namespace Xml2Dox
             }
             else
             {
-                switch (args[0])
+                switch (args[0].Substring(1, args[0].Length-1))
                 {
                     case nameof(Actions.xsl):
                         {

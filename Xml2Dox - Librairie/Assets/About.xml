@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<About>
+	<Name>Xml2Dox</Name>
+	<Description></Description>
+	<Version></Version>
+	<Members>
+		<Member Name="Aurélien Avanzinp" Role ="Creator-Developper" Contact="avsoft.studio@outlook.fr"/>
+		<Member Name="second member" Role ="second role" Contact="second mail"/>
+	</Members>
+</About>

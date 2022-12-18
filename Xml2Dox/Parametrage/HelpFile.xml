@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Xml2Dox Version="1.0.0">
+	<Description>Xml2Dox est une application permettant la génération d'une documentation xml</Description>
+	<Commands>
+		<Command Name="/xsl">
+			<Description>Lance la génération d'une documentation xml</Description>
+			<Exemple>Xml2Dox /xsl [Path] [Options1] [Options2] ...</Exemple>
+			<Parameters>
+				<Parameter Name="Path">Le chemin vers le fichier dont on doit faire la documentation</Parameter>
+				<Parameter Name="NomDuParametre">Commentaire sur le parametre</Parameter>
+			</Parameters>
+			<Options>
+				<Option Name="/S">Inclure les sous-dossiers</Option>
+				<Option Name="/NomOptions">Commentaire de l'option</Option>
+			</Options>
+		</Command>
+		<Command Name="/v">
+			<Description>Affiche la version de l'application</Description>
+			<Exemple>Xml2Dox /v</Exemple>
+			<Parameters/>
+			<Options/>
+		</Command>
+	</Commands>
+</Xml2Dox>

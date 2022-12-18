@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Xml2Dox - Librairie\Xml2Dox - Librairie.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Assets\Xml2Dox\" />
-  </ItemGroup>
-
 </Project>
