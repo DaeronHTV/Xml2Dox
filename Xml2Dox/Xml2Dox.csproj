@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Xml2Dox - Librairie\Xml2Dox - Librairie.csproj" />
+    <ProjectReference Include="..\Xml2Dox - Librairie\Xml2Dox.Librairie.csproj" />
   </ItemGroup>
 
 </Project>

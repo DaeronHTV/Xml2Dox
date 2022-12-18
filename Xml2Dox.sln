@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xml2Dox", "Xml2Dox\Xml2Dox.csproj", "{8FE5AFCF-0D1B-4B91-B8A7-4EDAEBDA6EC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox - Librairie", "Xml2Dox - Librairie\Xml2Dox - Librairie.csproj", "{9B8E270F-EFD8-4064-B358-C0A161469751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Librairie", "Xml2Dox - Librairie\Xml2Dox.Librairie.csproj", "{9B8E270F-EFD8-4064-B358-C0A161469751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox - IHM", "Xml2Dox - IHM\Xml2Dox - IHM.csproj", "{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Ihm", "Xml2Dox - IHM\Xml2Dox.Ihm.csproj", "{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0466947F-FABD-4A4E-902D-61497406B438}"
 	ProjectSection(SolutionItems) = preProject

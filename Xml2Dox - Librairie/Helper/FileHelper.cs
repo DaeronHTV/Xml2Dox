@@ -1,15 +1,32 @@
-﻿namespace Xml2Dox.Librairie
+﻿using System.Xml;
+using System.Xml.Serialization;
+
+namespace Xml2Dox.Librairie;
+
+public static class FileHelper
 {
-    internal class FileHelper
+    public static bool TryDezerializeXml<T>(string path, out T contentObject)
     {
-        public string SubstringAfter(string str, string input)
+        contentObject = default!;
+        try
         {
-            var index = input.IndexOf(str);
-            if (index is not -1)
+            var serializer = new XmlSerializer(typeof(T));
+            using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
-                return input.Substring(index + str.Length);
+                using(var reader = XmlReader.Create(stream))
+                {
+                    if(serializer.CanDeserialize(reader))
+                    {
+                        contentObject = (T)serializer.Deserialize(reader)!;
+                        return true;
+                    }
+                    return false;
+                }
             }
-            return input;
+        }
+        catch
+        {
+            return false;
         }
     }
 }

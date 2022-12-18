@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Xml2Dox.Librairie;
 
-namespace Xml2Dox.Librairie
+public static class StringHelper
 {
-    internal class StringHelper
+    public static string SubstringAfter(string str, string input)
     {
+        var index = input.IndexOf(str);
+        if (index is not -1)
+        {
+            return input.Substring(index + str.Length);
+        }
+        return input;
     }
 }
