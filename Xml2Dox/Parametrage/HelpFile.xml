@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Xml2Dox Version="1.0.0">
+<Help Version="1.0.0">
 	<Description>Xml2Dox est une application permettant la génération d'une documentation xml</Description>
 	<Commands>
 		<Command Name="/xsl">
@@ -46,4 +46,4 @@
 			</Parameters>
 		</Command>
 	</Commands>
-</Xml2Dox>
+</Help>
