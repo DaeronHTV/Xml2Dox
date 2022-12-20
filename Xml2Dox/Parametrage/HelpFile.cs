@@ -26,6 +26,8 @@ public partial class Help {
     
     private string descriptionField;
     
+    private HelpText[] textsField;
+    
     private HelpCommand[] commandsField;
     
     private string versionField;
@@ -37,6 +39,17 @@ public partial class Help {
         }
         set {
             this.descriptionField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayItemAttribute("Text", IsNullable=false)]
+    public HelpText[] Texts {
+        get {
+            return this.textsField;
+        }
+        set {
+            this.textsField = value;
         }
     }
     
@@ -59,6 +72,41 @@ public partial class Help {
         }
         set {
             this.versionField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+public partial class HelpText {
+    
+    private string nameField;
+    
+    private string valueField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public string Name {
+        get {
+            return this.nameField;
+        }
+        set {
+            this.nameField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlTextAttribute()]
+    public string Value {
+        get {
+            return this.valueField;
+        }
+        set {
+            this.valueField = value;
         }
     }
 }
@@ -180,7 +228,7 @@ public partial class HelpCommandOption {
     
     private string exempleField;
     
-    private string[] textField;
+    private string valueField;
     
     private string nameField;
     
@@ -195,13 +243,12 @@ public partial class HelpCommandOption {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    public string[] Text {
+    public string Value {
         get {
-            return this.textField;
+            return this.valueField;
         }
         set {
-            this.textField = value;
+            this.valueField = value;
         }
     }
     

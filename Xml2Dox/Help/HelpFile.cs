@@ -22,44 +22,70 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-[System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class Help {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+[System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+public partial class Help
+{
+
     private string descriptionField;
-    
+
+    private HelpText[] textsField;
+
     private HelpCommand[] commandsField;
-    
+
     private string versionField;
-    
+
     /// <remarks/>
-    public string Description {
-        get {
+    public string Description
+    {
+        get
+        {
             return this.descriptionField;
         }
-        set {
+        set
+        {
             this.descriptionField = value;
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Command", IsNullable=false)]
-    public HelpCommand[] Commands {
-        get {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Text", IsNullable = false)]
+    public HelpText[] Texts
+    {
+        get
+        {
+            return this.textsField;
+        }
+        set
+        {
+            this.textsField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayItemAttribute("Command", IsNullable = false)]
+    public HelpCommand[] Commands
+    {
+        get
+        {
             return this.commandsField;
         }
-        set {
+        set
+        {
             this.commandsField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Version {
-        get {
+    public string Version
+    {
+        get
+        {
             return this.versionField;
         }
-        set {
+        set
+        {
             this.versionField = value;
         }
     }
@@ -70,103 +96,38 @@ public partial class Help {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class HelpCommand {
-    
-    private string descriptionField;
-    
-    private string exempleField;
-    
-    private HelpCommandParameter[] parametersField;
-    
-    private HelpCommandOption[] optionsField;
-    
-    private string nameField;
-    
-    /// <remarks/>
-    public string Description {
-        get {
-            return this.descriptionField;
-        }
-        set {
-            this.descriptionField = value;
-        }
-    }
-    
-    /// <remarks/>
-    public string Exemple {
-        get {
-            return this.exempleField;
-        }
-        set {
-            this.exempleField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Parameter", IsNullable=false)]
-    public HelpCommandParameter[] Parameters {
-        get {
-            return this.parametersField;
-        }
-        set {
-            this.parametersField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Option", IsNullable=false)]
-    public HelpCommandOption[] Options {
-        get {
-            return this.optionsField;
-        }
-        set {
-            this.optionsField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Name {
-        get {
-            return this.nameField;
-        }
-        set {
-            this.nameField = value;
-        }
-    }
-}
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class HelpText
+{
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class HelpCommandParameter {
-    
     private string nameField;
-    
+
     private string valueField;
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             return this.nameField;
         }
-        set {
+        set
+        {
             this.nameField = value;
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlTextAttribute()]
-    public string Value {
-        get {
+    public string Value
+    {
+        get
+        {
             return this.valueField;
         }
-        set {
+        set
+        {
             this.valueField = value;
         }
     }
@@ -177,44 +138,184 @@ public partial class HelpCommandParameter {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class HelpCommandOption {
-    
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class HelpCommand
+{
+
+    private string descriptionField;
+
     private string exempleField;
-    
-    private string[] textField;
-    
+
+    private HelpCommandParameter[] parametersField;
+
+    private HelpCommandOption[] optionsField;
+
     private string nameField;
-    
+
     /// <remarks/>
-    public string Exemple {
-        get {
+    public string Description
+    {
+        get
+        {
+            return this.descriptionField;
+        }
+        set
+        {
+            this.descriptionField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string Exemple
+    {
+        get
+        {
             return this.exempleField;
         }
-        set {
+        set
+        {
             this.exempleField = value;
         }
     }
-    
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    public string[] Text {
-        get {
-            return this.textField;
+    [System.Xml.Serialization.XmlArrayItemAttribute("Parameter", IsNullable = false)]
+    public HelpCommandParameter[] Parameters
+    {
+        get
+        {
+            return this.parametersField;
         }
-        set {
-            this.textField = value;
+        set
+        {
+            this.parametersField = value;
         }
     }
-    
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayItemAttribute("Option", IsNullable = false)]
+    public HelpCommandOption[] Options
+    {
+        get
+        {
+            return this.optionsField;
+        }
+        set
+        {
+            this.optionsField = value;
+        }
+    }
+
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             return this.nameField;
         }
-        set {
+        set
+        {
             this.nameField = value;
         }
     }
 }
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class HelpCommandParameter
+{
+
+    private string nameField;
+
+    private string valueField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public string Name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlTextAttribute()]
+    public string Value
+    {
+        get
+        {
+            return this.valueField;
+        }
+        set
+        {
+            this.valueField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class HelpCommandOption
+{
+
+    private string exempleField;
+
+    private string valueField;
+
+    private string nameField;
+
+    /// <remarks/>
+    public string Exemple
+    {
+        get
+        {
+            return this.exempleField;
+        }
+        set
+        {
+            this.exempleField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string Value
+    {
+        get
+        {
+            return this.valueField;
+        }
+        set
+        {
+            this.valueField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
+    public string Name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+}
+

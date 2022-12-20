@@ -28,7 +28,7 @@ internal class Program
                     }
                 case nameof(Actions.h):
                     { //Show help file for the commands
-                        GetHelpFile();
+                        GetHelpFile(args);
                         break;
                     }
                 case nameof(Actions.v):
@@ -48,8 +48,13 @@ internal class Program
         }
     }
 
-    static void GetHelpFile()
+    static void GetHelpFile(string[] args)
     {
-        
+        if(args.Length == 1)
+            Help.Instance.ShowCommandBaseList();
+        else if (args[1] is "/D") 
+            Help.Instance.ShowAllCommandDetails();
+        else
+            Help.Instance.ShowCommandDetails(args[1].StartsWith("/") ? args[1] : "/" + args[1]);
     }
 }

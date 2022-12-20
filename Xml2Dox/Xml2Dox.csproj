@@ -11,4 +11,13 @@
     <ProjectReference Include="..\Xml2Dox - Librairie\Xml2Dox.Librairie.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\HelpFile\HelpFile_EN.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\HelpFile\HelpFile_FR.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

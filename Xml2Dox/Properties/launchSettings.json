@@ -2,7 +2,7 @@
   "profiles": {
     "Xml2Dox": {
       "commandName": "Project",
-      "commandLineArgs": "/xsl"
+      "commandLineArgs": "/h /D"
     }
   }
 }

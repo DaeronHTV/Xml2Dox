@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Help Version="1.0.0">
 	<Description>Xml2Dox est une application permettant la génération d'une documentation xml</Description>
+	<Texts>
+		<Text Name="WantDetails">Pour avoir plus de détails sur une commande taper Xml2Dox /h [nom commande]</Text>
+		<Text Name="CommandNotFound">La commande souhaitee n'est pas connue</Text>
+	</Texts>
 	<Commands>
 		<Command Name="/xsl">
 			<Description>Lance la génération d'une documentation xml</Description>
@@ -14,17 +18,21 @@
 				<Parameter Name="Extensions"></Parameter>
 			</Parameters>
 			<Options>
-				<Option Name="/S">Inclure les sous-dossiers</Option>
+				<Option Name="/S">
+					<Value>Inclure les sous-dossiers</Value>
+				</Option>
 				<Option Name="/F">
 					<Exemple>Xml2Dox /xsl [Path] [Extension] /F html</Exemple>
-					Permet de spécifier le format de la documentation. Par defaut le format est xml.
-					Liste des formats disponibles :
-					- XML
-					- HTML
+					<Value>
+						Permet de spécifier le format de la documentation. Par defaut le format est xml.
+						Liste des formats disponibles :
+						- XML
+						- HTML
+					</Value>
 				</Option>
 				<Option Name="/O">
 					<Exemple>Xml2Dox [Path] [Extensions] /O "C:\Users\Out"</Exemple>
-					Permet de spécifier un dossier output. Par defaut on prendra le dossier ou se trouve le fichier xml/xsl
+					<Value>Permet de spécifier un dossier output. Par defaut on prendra le dossier ou se trouve le fichier xml/xsl</Value>
 				</Option>
 			</Options>
 		</Command>
