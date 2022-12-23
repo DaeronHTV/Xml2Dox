@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using Xml2Dox.Librairie;
+﻿using Xml2Dox.Librairie;
 
 namespace Xml2Dox;
 
@@ -49,7 +48,10 @@ public partial class Help
     public void ShowAllCommandDetails()
     {
         foreach(HelpCommand command in Commands)
+        {
             ShowCommandDetails(command.Name);
+            Console.WriteLine("\n----------------------------------------------------------------\n");
+        }
     }
 
     /// <summary>
@@ -70,7 +72,7 @@ public partial class Help
         {
             Console.WriteLine("\n"+nameof(command.Parameters).ToUpper()+"\n");
             foreach (IParameters parameter in command.Parameters)
-                Console.WriteLine($"{parameter.Name} : {parameter.Value}");
+                Console.WriteLine($"[{parameter.Name}] : {parameter.Value}");
         }
         if(command.Options is not null && command.Options.Length > 0)
         {
