@@ -6,50 +6,42 @@
 The project progress in function of the time that I have in order to code all the features needed to publish the first version.
 So it can take some times before to do it.
 
-## Introduction
+## I. Introduction
 
 Xml2Dox is an application that allows to create a documentation like the documentations generate by the application doxygen for
 your XSLT/XML file thanks to specifics comments.
 
 This application was created with the C# langage with currently .Net Core 6
 
-## How to install
+## II. Support
+
+If you have some issues with the application, you can create a ticket in the issues section of the repos by following this link : [https://github.com/DaeronHTV/Xml2Dox/issues](https://github.com/DaeronHTV/Xml2Dox/issues)
+
+## III. Contributing
+
+If you want to contribute on the project in anyway available check the [contributing file](./CONTRIBUTING.md) in the repos. It will give you all the information that you need to know.
+
+## IV. License
+
+To get all the information about the license of the application, check the [license file](./LICENSE) associated in the repositories
+
+## V. How to install
 
 The application contains two exe files. One to use as a console command, the second to use as a desktop application
 
-### Use the console application
+### V.1. Use the console application
 
-### Use the desktop application
+### V.2. Use the desktop application
 
-## How to use the application
+## VI. How to use the application
 
 In order to get all the informations about the functionnement and the features of the application, follow the link to wiki pages or check
 the documentations 
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
 ## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+
+TODO
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-
-## License
-
-To get all the information about the license of the application, check the license file associated in the repositories
+TODO
