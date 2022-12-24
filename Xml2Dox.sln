@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xml2Dox", "Xml2Dox\Xml2Dox.csproj", "{8FE5AFCF-0D1B-4B91-B8A7-4EDAEBDA6EC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Librairie", "Xml2Dox - Librairie\Xml2Dox.Librairie.csproj", "{9B8E270F-EFD8-4064-B358-C0A161469751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xml2Dox.Librairie", "Xml2Dox - Librairie\Xml2Dox.Librairie.csproj", "{9B8E270F-EFD8-4064-B358-C0A161469751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Ihm", "Xml2Dox - IHM\Xml2Dox.Ihm.csproj", "{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xml2Dox.Ihm", "Xml2Dox - IHM\Xml2Dox.Ihm.csproj", "{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0466947F-FABD-4A4E-902D-61497406B438}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,6 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BC6DF64E-ABB7-41AA-8B12-795EF7D9F4C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Tests", "Xml2Dox.Tests\Xml2Dox.Tests.csproj", "{50963F45-B12D-43F0-A9E4-65273D77B496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Librairie.Tests", "Xml2Dox.Librairie.Tests\Xml2Dox.Librairie.Tests.csproj", "{3D745A51-F09B-40E7-BCA5-20B5EEE7D0D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml2Dox.Ihm.Tests", "Xml2Dox.Ihm.Tests\Xml2Dox.Ihm.Tests.csproj", "{F7D302F2-E1F2-40AD-ABA3-18882F998AB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,9 +43,26 @@ Global
 		{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CAAE6C9-A4F9-45E4-822D-CD4A33C08698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50963F45-B12D-43F0-A9E4-65273D77B496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50963F45-B12D-43F0-A9E4-65273D77B496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50963F45-B12D-43F0-A9E4-65273D77B496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50963F45-B12D-43F0-A9E4-65273D77B496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D745A51-F09B-40E7-BCA5-20B5EEE7D0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D745A51-F09B-40E7-BCA5-20B5EEE7D0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D745A51-F09B-40E7-BCA5-20B5EEE7D0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D745A51-F09B-40E7-BCA5-20B5EEE7D0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D302F2-E1F2-40AD-ABA3-18882F998AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D302F2-E1F2-40AD-ABA3-18882F998AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D302F2-E1F2-40AD-ABA3-18882F998AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D302F2-E1F2-40AD-ABA3-18882F998AB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50963F45-B12D-43F0-A9E4-65273D77B496} = {BC6DF64E-ABB7-41AA-8B12-795EF7D9F4C0}
+		{3D745A51-F09B-40E7-BCA5-20B5EEE7D0D9} = {BC6DF64E-ABB7-41AA-8B12-795EF7D9F4C0}
+		{F7D302F2-E1F2-40AD-ABA3-18882F998AB8} = {BC6DF64E-ABB7-41AA-8B12-795EF7D9F4C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F51F8750-DA30-4A36-A8CE-A817D0BCECE3}
