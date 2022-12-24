@@ -1,4 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Text>
-	
-</Text>
+<Texts>
+	<Text Name="WantDetails">You can have more details on a command execute Xml2Dox help [nom commande]</Text>
+	<Text Name="CommandNotFound">The command given isn't recognized</Text>
+	<Text Name="HelpFileLoadFailed">Impossible to load the file</Text>
+	<Text Name="NotEnoughArgument">Not enough argument to launch the application</Text>
+	<Text Name="VersionSentence">Xml2Dox Version 1.0.0</Text>
+	<Text Name="Exception">An erroroccured during the execution of the process</Text>
+</Texts>

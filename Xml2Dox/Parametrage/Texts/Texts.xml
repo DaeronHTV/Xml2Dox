@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Texts>
+	<Text Name="WantDetails">Pour avoir plus de détails sur une commande taper Xml2Dox help [nom commande]</Text>
+	<Text Name="CommandNotFound">La commande souhaitee n'est pas connue</Text>
+	<Text Name="HelpFileLoadFailed">Impossible de charger le fichier</Text>
+	<Text Name="NotEnoughArgument">Pas assez d'argument pour lancer l'application</Text>
+</Texts>
