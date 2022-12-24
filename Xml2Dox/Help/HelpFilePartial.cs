@@ -1,6 +1,4 @@
-﻿using Xml2Dox.Librairie;
-
-namespace Xml2Dox;
+﻿namespace Xml2Dox;
 
 /// <summary>
 /// Class that describe the XML file that contains the content shown by the help command
@@ -13,7 +11,7 @@ public partial class Help
     /// <summary>
     /// Get the singleton instance of the help object
     /// </summary>
-    public static Help Instance
+    internal static Help Instance
     {
         get
         {
@@ -33,9 +31,9 @@ public partial class Help
     }
 
     /// <summary>
-    /// Show the base list of command when the user execute the command Xml2Dox /h
+    /// Show the base list of command when the user execute the command Xml2Dox help
     /// </summary>
-    public void ShowCommandBaseList()
+    internal void ShowCommandBaseList()
     {
         foreach(HelpCommand command in Commands)
         {
@@ -45,7 +43,10 @@ public partial class Help
         Console.WriteLine(Texts.FirstOrDefault(t => t.Name == "WantDetails")?.Value);
     }
 
-    public void ShowAllCommandDetails()
+    /// <summary>
+    /// Generate all the documentation in detail for all the command
+    /// </summary>
+    internal void ShowAllCommandDetails()
     {
         foreach(HelpCommand command in Commands)
         {
@@ -58,7 +59,7 @@ public partial class Help
     /// Show the details of the specifics command when the user execute the commande Xml2Dox /h [commandName]
     /// </summary>
     /// <param name="commandName">The name of the command to show the help</param>
-    public void ShowCommandDetails(string commandName)
+    internal void ShowCommandDetails(string commandName)
     {
         var command = Commands.FirstOrDefault(t => t.Name == commandName);
         if(command is null)
@@ -68,21 +69,38 @@ public partial class Help
         }
         Console.WriteLine($"{command.Name} : {command.Description}");
         Console.WriteLine($"Exemple : {command.Exemple}");
-        if(command.Parameters is not null && command.Parameters.Length > 0)
+        GenerateIParametersDoc(command.Parameters, "Parameters");
+        GenerateIParametersDoc(command.Options, "Options");
+    }
+
+    /// <summary>
+    /// Generate the list of parameters or options for a command
+    /// </summary>
+    /// <param name="list">List that contains the data</param>
+    /// <param name="name">Name of the type data shown</param>
+    private void GenerateIParametersDoc(IParameters[] list, string name)
+    {
+        if(list is not null && list.Length > 0)
         {
-            Console.WriteLine("\n"+nameof(command.Parameters).ToUpper()+"\n");
-            foreach (IParameters parameter in command.Parameters)
-                Console.WriteLine($"[{parameter.Name}] : {parameter.Value}");
-        }
-        if(command.Options is not null && command.Options.Length > 0)
-        {
-            Console.WriteLine("\n"+nameof(command.Options).ToUpper()+ "\n");
-            foreach (IParameters option in command.Options)
-                Console.WriteLine($"{option.Name} : {option.Value}");
+            Console.WriteLine($"\n{name}\n");
+            foreach (IParameters objet in list)
+                Console.WriteLine($"{objet.Name} : {objet.Value}");
         }
     }
 }
 
+/// <summary>
+/// Class that defines the object Parameter in the XML file
+/// </summary>
+/// <remarks>
+/// Jsut here to apply an interface to simplify the generation of the documentation
+/// </remarks>
 public partial class HelpCommandParameter : IParameters { }
 
+/// <summary>
+/// Class that defines the objet Option in the XML file
+/// </summary>
+/// <remarks>
+/// Just here to apply an interface to simplify the generation of the documentation
+/// </remarks>
 public partial class HelpCommandOption : IParameters { }
