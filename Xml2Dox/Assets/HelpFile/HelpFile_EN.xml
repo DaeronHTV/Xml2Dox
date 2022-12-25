@@ -33,19 +33,19 @@
 			<Description>Show the data for the different commands available</Description>
 			<Exemple>Xml2Dox help [nomCommande] ou Xml2Dox help /D</Exemple>
 			<Parameters>
-				<Parameter Name="nomCommande">(Optionnel) Permet d'avoir les details d'une commande precise. Non renseigne une liste de base de toute les commandes est affichées</Parameter>
+				<Parameter Name="nomCommande">(Optional) Allows to have the details of a specific command. Not given, a list of all the commands is shown</Parameter>
 			</Parameters>
 			<Options>
 				<Option Name="/D">
-					<Value>Donne toute la liste detaillee de toutes les commandes disponibles</Value>
+					<Value>Give all the detail list of all the available commands</Value>
 				</Option>
 			</Options>
 		</Command>
 		<Command Name="config">
-			<Description>Permet de lancer un processus de documentation en fonction d'un fichier de configuration</Description>
+			<Description>Allows to launch the process in function of the parameters in a config file</Description>
 			<Exemple>Xml2Dox config [ConfigPath]</Exemple>
 			<Parameters>
-				<Parameter Name="ConfigPath">Le chemin vers le fichier de configuration</Parameter>
+				<Parameter Name="ConfigPath">The path to the congif file</Parameter>
 			</Parameters>
 		</Command>
 	</Commands>
