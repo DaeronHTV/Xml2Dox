@@ -1,1 +1,52 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Help Version="1.0.0">
+	<Description>Xml2Dox is an application that allows to generate a documentation for xsl file</Description>
+	<Commands>
+		<Command Name="xsl">
+			<Description>Launch the generation of a xml documentation</Description>
+			<Exemple>Xml2Dox xsl [Path] [Extensions] [Options1] [Options2] ...</Exemple>
+			<Parameters>
+				<Parameter Name="Path">The file path that need the generation of documentation. The path can describe a folder or a file. If it's a folder , we take all the file present</Parameter>
+				<Parameter Name="Extensions"></Parameter>
+			</Parameters>
+			<Options>
+				<Option Name="/S">
+					<Value>Include the sub file when the path describe a folder</Value>
+				</Option>
+				<Option Name="/F">
+					<Exemple>Xml2Dox xsl [Path] [Extension] /F html</Exemple>
+					<Value>Allow to specify the format of the documentation. Default format is xml. List of the possible format : XML - HTML</Value>
+				</Option>
+				<Option Name="/O">
+					<Exemple>Xml2Dox xsl [Path] [Extensions] /O "C:\Users\Out"</Exemple>
+					<Value>Allow to specify an output file. Default the application take the folder where is the xml/xsl file</Value>
+				</Option>
+			</Options>
+		</Command>
+		<Command Name="version">
+			<Description>Show the version of the application</Description>
+			<Exemple>Xml2Dox version</Exemple>
+			<Parameters/>
+			<Options/>
+		</Command>
+		<Command Name="help">
+			<Description>Show the data for the different commands available</Description>
+			<Exemple>Xml2Dox help [nomCommande] ou Xml2Dox help /D</Exemple>
+			<Parameters>
+				<Parameter Name="nomCommande">(Optional) Allows to have the details of a specific command. Not given, a list of all the commands is shown</Parameter>
+			</Parameters>
+			<Options>
+				<Option Name="/D">
+					<Value>Give all the detail list of all the available commands</Value>
+				</Option>
+			</Options>
+		</Command>
+		<Command Name="config">
+			<Description>Allows to launch the process in function of the parameters in a config file</Description>
+			<Exemple>Xml2Dox config [ConfigPath]</Exemple>
+			<Parameters>
+				<Parameter Name="ConfigPath">The path to the congif file</Parameter>
+			</Parameters>
+		</Command>
+	</Commands>
+</Help>

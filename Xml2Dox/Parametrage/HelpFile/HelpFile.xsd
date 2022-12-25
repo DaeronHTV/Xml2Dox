@@ -4,21 +4,6 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Description" type="xs:string" />
-				<xs:element name="Texts">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element maxOccurs="unbounded" name="Text">
-								<xs:complexType>
-									<xs:simpleContent>
-										<xs:extension base="xs:string">
-											<xs:attribute name="Name" type="xs:string" use="required" />
-										</xs:extension>
-									</xs:simpleContent>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:element name="Commands">
 					<xs:complexType>
 						<xs:sequence>
@@ -27,7 +12,7 @@
 									<xs:sequence>
 										<xs:element name="Description" type="xs:string" />
 										<xs:element name="Exemple" type="xs:string" />
-										<xs:element minOccurs="0" name="Parameters">
+										<xs:element name="Parameters">
 											<xs:complexType>
 												<xs:sequence minOccurs="0">
 													<xs:element maxOccurs="unbounded" name="Parameter">
