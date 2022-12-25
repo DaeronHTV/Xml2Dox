@@ -66,7 +66,7 @@ internal class Program
     {
         if (args.Length == 1)
             Help.Instance.ShowCommandBaseList();
-        else if (args[1] is "/D")
+        else if (args[1] is OptionsConstHelper.HelpDetails)
             Help.Instance.ShowAllCommandDetails();
         else
             Help.Instance.ShowCommandDetails(args[1]);
