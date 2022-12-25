@@ -1,31 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:foo="http://foo.com" exclude-result-prefixes="foo">
-	<!-- 
-@Name Interface Ariane C4H export des demandes - Envoi
-@Historique DES MODIFICATIONS                              
-DATE			AUTEUR			FICHE			DESCRIPTION
-20/10/2022		AAV				B41021			Mauvaise Gestion du segment ROL
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<!-- 
+@Name XML documentation into HTML documentation
+@Description A stylesheet that allows to transform an xml into html
 @Version 1.0.0
-@VersionS1 ARIANE - 4.1.3.1
-@VersionS2 C4H - X.X.X
+@Author DaeronHTV
 ========================================================== -->
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
-
-	<xsl:variable name="newline">
-		<xsl:value-of select="'&#13;'"/>
-	</xsl:variable>
-
-	<!--
-		@description Table Reject contient tous les messages a integrer dans le segment ERR pour decrire le detail de ce qui c'est passe
-		@remarks Ce tableau est utilise uniquement pour donner une erreur lorsque cette derniere provient d'une erreur dans le message
-		HL7 qu'on reçoit
-		@param Segment - Le segment a verifier
-		@param Field - Le champ du segment a regarder
-		@param SubField - Les sous-champ du segment a regarder
-	-->
-	<foo:rejects>
-		<foo:reject Segment='QPD' Field='3'/>
-	</foo:rejects>
 
 	<xsl:template match="ITEST_ACKQUERY_MEDIPATH">
 		<xsl:element name="GAPEntrant">

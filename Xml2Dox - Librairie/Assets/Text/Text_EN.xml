@@ -6,4 +6,7 @@
 	<Text Name="NotEnoughArgument">Pas assez d'argument pour lancer l'application</Text>
 	<Text Name="VersionSentence">Xml2Dox Version 1.0.0</Text>
 	<Text Name="Exception">Une erreur s'est produite durant l'execution du processus</Text>
+	<Text Name="WrongInputPath">The path to the file/folder isn't defined or wrong !</Text>
+	<Text Name="WrongOutputPath">The path for the output folder isn't defined or wrong !</Text>
+	<Text Name="XsltOptionsNotEnoughArgument">Not enough argument to generate the documentation</Text>
 </Texts>

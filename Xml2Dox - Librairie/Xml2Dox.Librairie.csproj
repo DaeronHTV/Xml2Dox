@@ -27,13 +27,19 @@
 		<None Update="Assets\About.xml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-		<None Update="ExempleXslWithDoc.xslt">
+		<None Update="Assets\Example\ExempleXslWithDoc.xslt">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-		<None Update="Parametrage\About.xml">
+		<None Update="Assets\Text\Text_EN.xml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Text\Text_FR.xml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Parametrage\About\About.xml">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</None>
-		<None Update="XmlToHtml.xslt">
+		<None Update="Assets\XmlToHtml.xslt">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>

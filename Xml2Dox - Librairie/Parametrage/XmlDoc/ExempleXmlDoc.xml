@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Documentations Version="1.0.0">
+	<Name>Interface Ariane C4H export des demandes - envoi</Name>
+	<VersionS1 Name="ARIANE" Value="4.1.3.1"/>
+	<VersionS2 Name="C4H" Value="XXX"/>
+	<Historiques>
+		<Historique Date="" Auteur="FIZ" Fiche="XXX">Création</Historique>
+		<Historique Date="26/10/2022" Auteur="AAV" Fiche="B41021">Mauvaise Gestion du Segment ROL</Historique>
+	</Historiques>
+	<Variables>
+		<Variable Name="_WSTrue" Value="true" Version="">
+			<Description>Ceci est la description</Description>
+			<Remarks>Ceci est la description</Remarks>
+		</Variable>
+		<Variable Name="_WSFalse" Value="false">
+			<Description/>
+			<Remarks/>
+		</Variable>
+	</Variables>
+	<Templates>
+		<Template Name="GetFacturationByDate">
+			<Description>Ceci est la description</Description>
+			<Remarks>Ceci est la description</Remarks>
+			<Params>
+				<Param Code="DateRef" Description="Date de référence pour récupération des valeurs"/>
+				<Param Code="ActiviteNoed" Description="Contient les données de la balises Activite"/>
+			</Params>
+		</Template>
+		<Template Name="getROL">
+			<Description>Permet de generer les differents segment rol contenant les informations du medecin qui redirige le patient</Description>
+			<Remarks>Il peut avoir deux segments rol si le parcours soin est à 12 avec declaration du medecin traitant</Remarks>
+			<Return>Les différents segments ROL générés</Return>
+		</Template>
+	</Templates>
+</Documentations>

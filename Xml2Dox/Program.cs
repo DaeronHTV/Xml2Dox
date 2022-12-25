@@ -3,72 +3,52 @@
 /// <summary>
 /// Main class of the application
 /// </summary>
-internal class Program
+public class Program
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="args"></param>
     static void Main(string[] args)
     {
+        TextsText[] listText = Texts.Instance.Text;
         if (args.Length == 0)
         {
-            Console.WriteLine(Texts.Instance.Text.FirstOrDefault(t => t.Name == TextConstHelper.NotEnoughArgument)?.Value);
+            Console.WriteLine(listText.FirstOrDefault(t => t.Name == TextConstHelper.NotEnoughArgument)?.Value);
+            return;
         }
-        else
+        try
         {
-            try
+            switch (args[0])
             {
-                switch (args[0])
-                {
-                    case CommandConstHelper.Xsl:
-                        { //Launch the generation of a xsl documentation
-                            var parseur = new XslDocToXml(new XsltDocOptions(args));
-                            if (parseur.GenerateXml())
-                            {
-
-                            }
-                            break;
-                        }
-                    case CommandConstHelper.Help:
-                        { //Show help file for the commands
-                            GetHelpFile(args);
-                            break;
-                        }
-                    case CommandConstHelper.Version:
+                case CommandConstHelper.Xsl:
+                    {
+                        if (!Proxy.Instance.GenerateDocumentation(new XsltDocOptions(args)))
                         {
-                            Console.WriteLine(CommandConstHelper.Version);
-                            break;
+                            //TODO
                         }
-                    case CommandConstHelper.Config:
-                        { //Generate documentation in function of a config file
-                            break;
-                        }
-                    default:
-                        Console.WriteLine(Texts.Instance.Text.FirstOrDefault(t => t.Name == TextConstHelper.CommandNotFound)?.Value);
-                        Console.WriteLine(Texts.Instance.Text.FirstOrDefault(t => t.Name == TextConstHelper.WantDetails)?.Value);
                         break;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(Texts.Instance.Text.FirstOrDefault(t => t.Name == TextConstHelper.Exception)?.Value);
-                Console.WriteLine(e);
+                    }
+                case CommandConstHelper.Help:
+                    { 
+                        CommandHelper.GetHelpFile(args);
+                        break;
+                    }
+                case CommandConstHelper.Version:
+                    {
+                        Console.WriteLine(CommandConstHelper.Version);
+                        break;
+                    }
+                case CommandConstHelper.Config:
+                    { 
+                        break;
+                    }
+                default:
+                    Console.WriteLine(listText.FirstOrDefault(t => t.Name == TextConstHelper.CommandNotFound)?.Value);
+                    Console.WriteLine(listText.FirstOrDefault(t => t.Name == TextConstHelper.WantDetails)?.Value);
+                    break;
             }
         }
-    }
-
-    /// <summary>
-    /// Show the result of the command help in function of the options and parameters given
-    /// </summary>
-    /// <param name="args">Arguments list given by the user when calling the application</param>
-    static void GetHelpFile(string[] args)
-    {
-        if (args.Length == 1)
-            Help.Instance.ShowCommandBaseList();
-        else if (args[1] is OptionsConstHelper.HelpDetails)
-            Help.Instance.ShowAllCommandDetails();
-        else
-            Help.Instance.ShowCommandDetails(args[1]);
+        catch (Exception e)
+        {
+            Console.WriteLine(listText.FirstOrDefault(t => t.Name == TextConstHelper.Exception)?.Value);
+            Console.WriteLine(e);
+        }
     }
 }
