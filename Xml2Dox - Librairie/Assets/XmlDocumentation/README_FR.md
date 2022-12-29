@@ -13,7 +13,6 @@
 	+ @Param : Donne des informations sur un paramètre de la template (Code - Description)
 	+ @Return : Indique ce que retourne la template si elle retourne une information
 	+ @DateDerModif : (Optionel) Permet d'indiquer la date de dernière modification
-	+ @Author : (Optionel) Permet d'indiquer la personne à la base de la création ou la dernière à avoir modifier
 	+ Remarque : Le nom de la template sera récupéré via l'attribut name de la balise
 
 - Pour les variables globals

@@ -1,4 +1,6 @@
-﻿namespace Xml2Dox.Librairie;
+﻿using System.IO;
+
+namespace Xml2Dox.Librairie;
 
 /// <summary>
 /// Class that contains the options for the generation of stylesheet documentation
@@ -29,17 +31,22 @@ public class XsltDocOptions
     /// Indicate if we need to include the sub folder in the research of file to documentate
     /// </summary>
     /// <remarks>Optional, by default false</remarks>
-    public string IncludeSubDirectory { get; private init; }
+    public bool IncludeSubDirectory { get; private init; }
 
     /// <summary>
     /// The list of extensions to take in charge for researching the file
     /// </summary>
-    public ISet<string> Extensions { get; private init; }
+    public string Extensions { get; private init; }
 
     /// <summary>
     /// Give the format to generate for the documentation
     /// </summary>
     public string Format { get; private init; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public string InputFileName { get; private init; }
     #endregion
 
     /// <summary>
@@ -53,12 +60,14 @@ public class XsltDocOptions
             throw new ArgumentException(listText.FirstOrDefault(t => t.Name == TextConstHelper.XsltOptionsNotEnoughArgument)?.Value);
         }
         Path = args[1];
-        IsFolder = File.Exists(Path);
+        IsFolder = !File.Exists(Path);
+        InputFileName = System.IO.Path.GetFileNameWithoutExtension(Path);
         var index = Array.IndexOf(args, OptionsConstHelper.OutputPath);
-        OutputPath = index is not -1 ? args[index++] : Path;
+        OutputPath = index is not -1 ? args[index++] : System.IO.Path.GetDirectoryName(Path)!;
         index = Array.IndexOf(args, OptionsConstHelper.GiveFormatDoc);
-        Format = index is not -1 ? args[index++] : "Xml";
-
+        Format = index is not -1 ? args[index++].ToTitleCase() : "Xml";
+        index = Array.IndexOf(args, OptionsConstHelper.IncludeSubFile);
+        IncludeSubDirectory = index is not -1;
     }
 
     /// <summary>

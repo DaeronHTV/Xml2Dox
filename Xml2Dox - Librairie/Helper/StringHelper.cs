@@ -2,13 +2,18 @@
 
 public static class StringHelper
 {
-    public static string SubstringAfter(string str, string input)
+    public static string SubstringAfter(this string str, string input)
     {
-        var index = input.IndexOf(str);
+        var index = str.IndexOf(input);
         if (index is not -1)
         {
-            return input.Substring(index + str.Length);
+            return str.Substring(index + str.Length);
         }
-        return input;
+        return str;
+    }
+
+    public static string ToTitleCase(this string str)
+    {
+        return $"{char.ToUpper(str[0])}{str[1..].ToLower()}";
     }
 }

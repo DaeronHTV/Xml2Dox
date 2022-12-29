@@ -14,7 +14,7 @@ public class Proxy : IXmlDoc
 
     private Proxy() 
     {
-        listParseurs = Assembly.GetAssembly(typeof(IXmlDoc))!.GetTypes().Where(t => t.IsClass);
+        listParseurs = Assembly.GetAssembly(typeof(IXmlDoc))!.GetTypes().Where(t => t.IsClass && typeof(IXmlDoc).IsAssignableFrom(t)).ToList();
     }
 
     /// <summary>

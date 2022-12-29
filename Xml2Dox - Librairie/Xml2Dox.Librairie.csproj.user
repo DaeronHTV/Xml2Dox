@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <None Update="Assets\Example\ExempleXslWithDoc.xslt">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="Parametrage\Texts\Texts.xsd">
       <SubType>Designer</SubType>
     </None>

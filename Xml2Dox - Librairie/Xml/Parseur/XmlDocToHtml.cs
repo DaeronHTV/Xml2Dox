@@ -7,7 +7,7 @@ internal class XmlDocToHtml: IXmlDoc
     /// <inheritdoc/>
     public bool GenerateDocumentation(XsltDocOptions options)
     {
-        XslDocToXml parseur = new();
+        XmlDocToXml parseur = new();
         if (!parseur.GenerateObject(options, out var doc))
         {
             return false;
