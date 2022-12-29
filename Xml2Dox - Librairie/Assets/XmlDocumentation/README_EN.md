@@ -7,9 +7,6 @@
 
 - Pour la feuille de style globale (xsl:stylesheet)
 	+ @Name : (Optionel) Nom de la feuille de style. Si non présent on prendra le nom de la feuille de style (XXXX.xsl)
-	+ @Historique : (Optionel) Indique une liste contenant une description des différentes modifications
-	+ @VersionS1 : (Optionel) Nom et version de l'application émetrice
-	+ @VersionS2 : (Optionel) Nom et version de l'application récepteur
 	+ @Author : (Optionel) Permet d'indiquer la personne à la base de la création ou la dernière à avoir modifier
 
 - Pour les templates
@@ -31,9 +28,3 @@ sera probablement jamais.
 
 Remarque : Il est possible de mettre le nom des élements (@XXX) dans le format souhaité (Upper, lower, CamelCase), tous seront traités
 de la même manière.
-
-Remarque : Format de @Historique 
-@HISTORIQUE DES MODIFICATIONS                              
-DATE			AUTEUR			FICHE			DESCRIPTION
-XXX				FIZ				XXX				Création
-20/10/2022		AAV				B41021			Mauvaise Gestion du segment ROL

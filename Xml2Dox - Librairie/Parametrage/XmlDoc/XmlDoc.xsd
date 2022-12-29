@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Documentations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Remarks" type="xs:string" />
+				<xs:element name="Authors">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Author" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Variables">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Variable">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Description" type="xs:string" />
+										<xs:element name="Remarks" type="xs:string" />
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required" />
+									<xs:attribute name="Value" type="xs:string" use="required" />
+									<xs:attribute name="Version" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Templates">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Template">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Description" type="xs:string" />
+										<xs:element name="Remarks" type="xs:string" />
+										<xs:element minOccurs="0" name="Return" type="xs:string" />
+										<xs:element minOccurs="0" name="Params">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element maxOccurs="unbounded" name="Param">
+														<xs:complexType>
+															<xs:attribute name="Code" type="xs:string" use="required" />
+															<xs:attribute name="Description" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required" />
+									<xs:attribute name="Version" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

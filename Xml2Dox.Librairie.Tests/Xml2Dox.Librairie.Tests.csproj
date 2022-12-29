@@ -21,4 +21,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Data\" />
+    <Folder Include="Config\" />
+    <Folder Include="helper\" />
+    <Folder Include="Xml\" />
+  </ItemGroup>
+
 </Project>
