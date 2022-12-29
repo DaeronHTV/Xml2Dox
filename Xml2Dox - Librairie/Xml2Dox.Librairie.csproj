@@ -44,4 +44,9 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Xml\Parseur\Xml\" />
+	  <Folder Include="Xml\Parseur\Xsd\" />
+	</ItemGroup>
+
 </Project>

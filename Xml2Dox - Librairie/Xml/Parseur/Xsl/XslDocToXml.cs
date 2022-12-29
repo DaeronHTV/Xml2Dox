@@ -5,10 +5,11 @@ namespace Xml2Dox.Librairie;
 /// <summary>
 /// Class allowing to launch the process of documentation into a proper xml format
 /// </summary>
-internal class XmlDocToXml : IXmlDoc
+internal class XslDocToXml : IXmlDoc
 {
     private XsltDocOptions Options = null!;
     private readonly Type xCommentType = typeof(XComment);
+    private const char ESCAPE = ' ';
     private const char AT = '@';
     private const string CR = "\n";
     private const string ATNAME = "@NAME";
@@ -39,11 +40,12 @@ internal class XmlDocToXml : IXmlDoc
     }
 
     /// <summary>
-    /// 
+    /// Generate the documentation of the xsl file as an object
     /// </summary>
-    /// <param name="options"></param>
-    /// <param name="doc"></param>
-    /// <returns></returns>
+    /// <remarks>A method created in order to be used in the HTML parser to simplify the process</remarks>
+    /// <param name="options">The options given by the user</param>
+    /// <param name="doc">The documentation as an object</param>
+    /// <returns>True is we can parse the content of the xsl, else False</returns>
     internal bool GenerateObject(XsltDocOptions options, out Documentations doc)
     {
         Options = options;
@@ -71,11 +73,11 @@ internal class XmlDocToXml : IXmlDoc
     }
 
     /// <summary>
-    /// 
+    /// Treat the comment of a node present in the xsl file
     /// </summary>
-    /// <param name="result"></param>
-    /// <param name="commentNode"></param>
-    /// <param name="node"></param>
+    /// <param name="result">a reference to the documentation object</param>
+    /// <param name="commentNode">The node that contains the commentaries</param>
+    /// <param name="node">The node that have the commentNode as commentaries</param>
     private void TreatNode(ref Documentations result, XComment commentNode, XElement node)
     {
         if (node is not null)
@@ -91,22 +93,22 @@ internal class XmlDocToXml : IXmlDoc
     }
 
     /// <summary>
-    /// 
+    /// Treat the comment specifics to the output node
     /// </summary>
-    /// <param name="result"></param>
-    /// <param name="comment"></param>
+    /// <param name="result">A reference to the documentation object</param>
+    /// <param name="comment">The node that contains the commentaries</param>
     private void TreatOuptutComment(ref Documentations result, XComment comment)
     {
         var data = TreatCommon(ref result, comment, Path.GetFileName(Options.Path)).FirstOrDefault(d => d.ToUpper().StartsWith(ATAUTHOR));
-        result.Authors = data?.Split(' ')[1].Split(" - ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)!;
+        result.Authors = data?.Split(ESCAPE)[1].Split(" - ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)!;
     }
 
     /// <summary>
-    /// 
+    /// Treat the comment specific to a variable node
     /// </summary>
     /// <param name="result"></param>
-    /// <param name="commentNode"></param>
-    /// <param name="node"></param>
+    /// <param name="commentNode">The node that contains the commentaries</param>
+    /// <param name="node">The node that have the commentNode as commentaries<</param>
     private static void TreatVariableComment(ref Documentations result, XComment commentNode, XElement node)
     {
         var variable = new DocumentationsVariable();
@@ -118,15 +120,15 @@ internal class XmlDocToXml : IXmlDoc
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="result"></param>
-    /// <param name="commentNode"></param>
+    /// <param name="result">A reference to the documentation object</param>
+    /// <param name="commentNode">The node that contains the commentaries</param>
     /// <param name="node"></param>
     private static void TreatTemplateComment(ref Documentations result, XComment commentNode, XElement node)
     {
         var template = new DocumentationsTemplate();
         var parametres = new List<DocumentationsTemplateParam>();
         var datas = TreatCommon(ref template, commentNode, node.Attributes().FirstOrDefault(a => a.Name == "name")?.Value!);
-        foreach(var param in datas.Where(d => d.ToUpper().StartsWith(ATPARAM)).Select(d => d.Split(' ', 2)[1]))
+        foreach(var param in datas.Where(d => d.ToUpper().StartsWith(ATPARAM)).Select(d => d.Split(ESCAPE, 2)[1]))
         {
             var content = param.Split(" - ", StringSplitOptions.TrimEntries);
             parametres.Add(new() { Code = content[0], Description = content[1] });
@@ -135,12 +137,21 @@ internal class XmlDocToXml : IXmlDoc
         result.templates.Add(template);
     }
 
+    /// <summary>
+    /// Method that allows to put in common all the set of properties that we have in common between the
+    /// different nodes
+    /// </summary>
+    /// <typeparam name="T">The type of documentation object</typeparam>
+    /// <param name="result">A reference to the documentation object</param>
+    /// <param name="commentNode">The node that contains the commentaries</param>
+    /// <param name="name"></param>
+    /// <returns></returns>
     private static string[] TreatCommon<T>(ref T result, XComment commentNode, string name = null!) where T : IXmlCommon
     {
         var datas = commentNode.Value.Split(CR, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         foreach (var data in datas)
         {
-            var list = data.Split(' ', 2);
+            var list = data.Split(ESCAPE, 2);
             switch (list[0].ToUpper())
             {
                 case ATNAME: result.Name = list[1].TrimStart(); break;

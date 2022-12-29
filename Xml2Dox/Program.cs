@@ -17,28 +17,10 @@ public class Program
         {
             switch (args[0])
             {
-                case CommandConstHelper.Xsl:
-                    {
-                        if (!Proxy.Instance.GenerateDocumentation(new XsltDocOptions(args)))
-                        {
-                            //TODO
-                        }
-                        break;
-                    }
-                case CommandConstHelper.Help:
-                    { 
-                        CommandHelper.GetHelpFile(args);
-                        break;
-                    }
-                case CommandConstHelper.Version:
-                    {
-                        Console.WriteLine(CommandConstHelper.Version);
-                        break;
-                    }
-                case CommandConstHelper.Config:
-                    { 
-                        break;
-                    }
+                case CommandConstHelper.Xsl: Proxy.Instance.GenerateDocumentation(new XsltDocOptions(args)); break;
+                case CommandConstHelper.Help: CommandHelper.GetHelpFile(args); break;
+                case CommandConstHelper.Version: Console.WriteLine(CommandConstHelper.Version); break;
+                case CommandConstHelper.Config: break;
                 default:
                     Console.WriteLine(listText.FirstOrDefault(t => t.Name == TextConstHelper.CommandNotFound)?.Value);
                     Console.WriteLine(listText.FirstOrDefault(t => t.Name == TextConstHelper.WantDetails)?.Value);
