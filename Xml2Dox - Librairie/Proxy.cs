@@ -36,9 +36,9 @@ public class Proxy : IXmlDoc
     }
 
     /// <inheritdoc/>
-    public void GenerateDocumentation(XsltDocOptions options)
+    public bool GenerateDocumentation(XsltDocOptions options)
     {
         var parseur = (IXmlDoc)Activator.CreateInstance(listParseurs.First(t => t.Name == $"XslDocTo{options.Format}"))!;
-        parseur?.GenerateDocumentation(options);
+        return parseur?.GenerateDocumentation(options) ?? false;
     }
 }

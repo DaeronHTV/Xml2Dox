@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Documentations Version="1.0.0">
-	<Name>Interface Ariane C4H export des demandes - envoi</Name>
-	<VersionS1 Name="ARIANE" Value="4.1.3.1"/>
-	<VersionS2 Name="C4H" Value="XXX"/>
-	<Historiques>
-		<Historique Date="" Auteur="FIZ" Fiche="XXX">Création</Historique>
-		<Historique Date="26/10/2022" Auteur="AAV" Fiche="B41021">Mauvaise Gestion du Segment ROL</Historique>
-	</Historiques>
+	<Name>Documentation XSL example</Name>
+	<Description>Example of an xml generate with the documentation present in the xsl file</Description>
+	<Authors>
+		<Author>An exemple of author</Author>
+	</Authors>
 	<Variables>
 		<Variable Name="_WSTrue" Value="true" Version="">
 			<Description>Ceci est la description</Description>

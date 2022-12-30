@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Documentations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0">
+  <Name>XML documentation into HTML documentation</Name>
+  <Description>A stylesheet that allows to transform an xml into html</Description>
+  <Authors>
+    <Author>DaeronHTV</Author>
+  </Authors>
+  <Variables />
+  <Templates>
+    <Template>
+      <Description>principale template de la feuille de style permettant de générer le documentation souhaitée</Description>
+      <Params />
+    </Template>
+    <Template Name="GetNoAction">
+      <Description>Permet de determiner si le service interop doit rejeter le message reçu</Description>
+      <Remarks>les champs obligatoire sont specifies dans un tableau de foo.</Remarks>
+      <Params />
+    </Template>
+    <Template Name="SMissFieldReception">
+      <Description>Cette Template genere un boolean que nous utilisons pour detecter ou non si</Description>
+      <Remarks>Separe des templates principales car communes a plusieurs templates et pour</Remarks>
+      <Params>
+        <Param Code="Segments" Description="La nodelist du segment souhaite" />
+        <Param Code="Field" Description="Le champ a rechercher" />
+      </Params>
+    </Template>
+  </Templates>
+</Documentations>
