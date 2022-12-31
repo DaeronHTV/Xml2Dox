@@ -5,9 +5,11 @@
 /// </summary>
 public interface IXmlDoc
 {
+    void Initialisation(XsltDocOptions options);
+
     /// <summary>
     /// Global method that generates the documentation in function of the options
     /// </summary>
     /// <param name="options">The options given by the user to generate the documentation</param>
-    bool GenerateDocumentation(XsltDocOptions options);
+    bool GenerateDocumentation();
 }

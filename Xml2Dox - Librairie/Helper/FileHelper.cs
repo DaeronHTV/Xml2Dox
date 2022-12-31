@@ -57,8 +57,11 @@ public static class FileHelper
         try
         {
             var serializer = new XmlSerializer(typeof(T));
-            var file = File.Create(Path.Combine(outputPath, fileName));
-            serializer.Serialize(file, contentObject);
+            using (var file = File.Create(Path.Combine(outputPath, fileName)))
+            {
+                serializer.Serialize(file, contentObject);
+                file.Close();
+            } 
         }
         catch(Exception ex)
         {

@@ -6,7 +6,7 @@ namespace Xml2Dox.Librairie;
 /// A class created in order to put in common all the call by the two applications (Console and IHM)
 /// </summary>
 /// <remarks>This class try to respect the design pattern proxy</remarks>
-public class Proxy : IXmlDoc
+public class Proxy
 {
     private IEnumerable<Type> listParseurs;
     private static readonly object locker = new();
@@ -39,6 +39,7 @@ public class Proxy : IXmlDoc
     public bool GenerateDocumentation(XsltDocOptions options)
     {
         var parseur = (IXmlDoc)Activator.CreateInstance(listParseurs.First(t => t.Name == $"XslDocTo{options.Format}"))!;
-        return parseur?.GenerateDocumentation(options) ?? false;
+        parseur?.Initialisation(options);
+        return parseur?.GenerateDocumentation() ?? false;
     }
 }

@@ -3,13 +3,16 @@
 <!-- 
 @Name XML documentation into HTML documentation
 @Description A stylesheet that allows to transform an xml into html
-@Version 1.0.0
+@Remarks 
+@Version Version of the file if you want 
 @Author DaeronHTV
-========================================================== -->
+-->
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
 	<!-- 
-	@description principale template de la feuille de style permettant de générer le documentation souhaitée
+	@Description principale template de la feuille de style permettant de générer le documentation souhaitée
+	@Remarks Ici on peut rajouter des remarques spéciales si nécessaire
+	@Version You can give a version to the template if you want ot keeep an history of modification for each of them
 	-->
 	<xsl:template match="Books">
 		<xsl:element name="Authors">

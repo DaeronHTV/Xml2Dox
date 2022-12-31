@@ -36,6 +36,93 @@
 		<None Update="Assets\Text\Text_FR.xml">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
+		<None Update="Assets\Documentations\README_EN.md">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Documentations\README_FR.md">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\bc_s.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\bdwn.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\closed.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\doc.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\doxygen.css">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\dynsections.js">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\folderclosed.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\folderopen.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\jquery.js">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\menu.js">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\menudata.js">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\nav_f.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\nav_g.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\nav_h.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\open.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\splitbar.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\sync_off.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\sync_on.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\tabs.css">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\tab_a.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\tab_b.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\tab_h.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\tab_s.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\Test.html">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\Separated\Test1.html">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\XmlToHtml.xslt">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\XmlToHtml\XmlToHtmlSeparated.xslt">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 		<None Update="Parametrage\About\About.xml">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</None>

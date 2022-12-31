@@ -22,14 +22,19 @@ internal class XslDocToXml : IXmlDoc
     private const string OUTPUT = "OUTPUT";
     private const string TEMPLATE = "TEMPLATE";
 
+    public void Initialisation(XsltDocOptions options)
+    {
+        Options = options;
+    }
+
     /// <inheritdoc/>
-    public bool GenerateDocumentation(XsltDocOptions options)
+    public bool GenerateDocumentation()
     {
         Console.WriteLine("Xml documentations generation...");
-        if (GenerateObject(options, out var doc))
+        if (GenerateObject(out var doc))
         {
             Console.WriteLine("Seriliazation of xml documentation...");
-            if (!FileHelper.TrySerializeXml(options.OutputPath, string.Concat(options.InputFileName, ".", options.Format), doc))
+            if (!FileHelper.TrySerializeXml(Options.OutputPath, string.Concat(Options.InputFileName, ".", Options.Format), doc))
             {
                 Console.WriteLine("An error occured during the save of the XML documentation file !");
                 return false;
@@ -46,9 +51,8 @@ internal class XslDocToXml : IXmlDoc
     /// <param name="options">The options given by the user</param>
     /// <param name="doc">The documentation as an object</param>
     /// <returns>True is we can parse the content of the xsl, else False</returns>
-    internal bool GenerateObject(XsltDocOptions options, out Documentations doc)
+    internal bool GenerateObject(out Documentations doc)
     {
-        Options = options;
         doc = default!;
         XElement root = XDocument.Load(Options.Path).Root!;
         if (root is not null)
